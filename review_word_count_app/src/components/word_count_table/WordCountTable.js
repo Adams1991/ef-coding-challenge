@@ -1,13 +1,9 @@
 import React from 'react';
 import './WordCountTable.css';
 import Word from './Word';
-import createWordCountHash from '../../helpers/WordCount';
+
 
 class WordCountTable extends React.Component {
-  constructor(props) {
-      super(props);
-  }
-
   render() {
     return(
       <div>
