@@ -18,6 +18,7 @@ class ReviewContainer extends Component {
 
   render() {
     const wordObject = createWordCountHash(this.state.reviewData);
+    const wordArray = createWordArray(wordObject);
     return (
       <div
         // Dummy props for testing purposes
@@ -27,7 +28,7 @@ class ReviewContainer extends Component {
       >
       <WordCountTable
         wordCountObject={wordObject}
-        wordArray={createWordArray(wordObject)}
+        wordArray={wordArray}
         valueArray={createValueArray(wordObject)}
       />
 
@@ -37,6 +38,7 @@ class ReviewContainer extends Component {
 }
 
 export default ReviewContainer;
+
 
 
 
