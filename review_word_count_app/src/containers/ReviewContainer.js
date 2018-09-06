@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DataImport from '../DataImport';
 import './ReviewContainer.css';
+import WordCountTable from '../components/word_count_table/WordCountTable'
 
 class ReviewContainer extends Component {
 
@@ -37,7 +38,7 @@ class ReviewContainer extends Component {
         reviewdataarray = {this.state.reviewData}
         wordhash = {this.createWordCountHash()}
       >
-
+      <WordCountTable />
 
       </div>
     );
