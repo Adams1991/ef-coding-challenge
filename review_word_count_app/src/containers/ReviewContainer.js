@@ -4,7 +4,8 @@ import createWordArray from '../helpers/KeysArray'
 import createValueArray from '../helpers/ValuesArray'
 import DataImport from '../DataImport';
 import './ReviewContainer.css';
-import WordCountTable from '../components/word_count_table/WordCountTable'
+import WordCountTable from '../components/word_count_table/WordCountTable';
+import WordCloud from '../components/word_cloud/WordCloud';
 
 class ReviewContainer extends Component {
 
@@ -31,6 +32,9 @@ class ReviewContainer extends Component {
         wordArray={wordArray}
         valueArray={createValueArray(wordObject)}
       />
+      <WordCloud
+        wordCountObject={wordObject}
+      />
 
       </div>
     );
@@ -38,18 +42,3 @@ class ReviewContainer extends Component {
 }
 
 export default ReviewContainer;
-
-
-
-
-
-
-
-
-
-
-
-// TODO: Import Data, Set state to imported data
-// TODO: Create Method to get word count from array (using hash)
-// TODO: Pass down hash as prop
-// TODO: Create render method
