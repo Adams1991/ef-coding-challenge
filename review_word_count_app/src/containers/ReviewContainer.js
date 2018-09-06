@@ -32,17 +32,13 @@ class ReviewContainer extends React.Component {
     var display = null
 
     if (this.state.displayWordCloud){
-       display =  <WordCloud
+       display = <WordCloud
                       className="WordCloud"
-                      wordArray={wordArray}
-                      valueArray={valueArray}
                       objectArray = {objectArray}
                   />
     }else{
-        display =   <WordCountTable
+        display =  <WordCountTable
                       className="WordTable"
-                      wordArray={wordArray}
-                      valueArray={valueArray}
                       objectArray = {objectArray}
                     />
     }
