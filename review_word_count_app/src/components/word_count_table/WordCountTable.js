@@ -1,4 +1,5 @@
 import React from 'react'
+import './WordCountTable.css';
 
 class WordCountTable extends React.Component {
   constructor(props) {
@@ -7,9 +8,11 @@ class WordCountTable extends React.Component {
 
   render() {
     return(
-      <table>
+      <div>
+      <table className="Table" >
 
       </table>
+      </div>
     )
   }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import createWordCountHash from '../helpers/WordCount'
 import DataImport from '../DataImport';
 import './ReviewContainer.css';
 import WordCountTable from '../components/word_count_table/WordCountTable'
@@ -10,35 +11,18 @@ class ReviewContainer extends Component {
     this.state = {
       reviewData: DataImport
     };
-
   }
-
-  createWordCountHash(){
-    var freqMap = {};
-    const arrayOfData = this.state.reviewData
-    arrayOfData.forEach((review) => {
-      var words = review.replace(/[.]/g, '').split(/\s/);
-      words.forEach(function(word) {
-          if (!freqMap[word]) {
-              freqMap[word] = 0;
-          }
-          freqMap[word] += 1;
-      });
-    })
-    return freqMap;
-  }
-
 
 
   render() {
-    this.createWordCountHash()
     return (
       <div
+        // Dummy props for testing purposes
         className="ReviewContainer"
-        reviewdataarray = {this.state.reviewData}
-        wordhash = {this.createWordCountHash()}
+        reviewdataarray= {this.state.reviewData}
+        wordhash = {createWordCountHash(this.state.reviewData)}
       >
-      <WordCountTable />
+      <WordCountTable   wordCountObject={createWordCountHash(this.state.reviewData)}/>
 
       </div>
     );
