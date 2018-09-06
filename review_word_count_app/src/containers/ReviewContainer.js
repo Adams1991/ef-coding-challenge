@@ -6,19 +6,38 @@ class ReviewContainer extends Component {
 
   constructor(props){
     super(props);
-    this.state = { reviewdata: DataImport };
+    this.state = {
+      reviewData: DataImport,
+
+    };
+    this.createWordCountHash = this.createWordCountHash.bind(this);
   }
 
-  // getState(){
-  //   return this.state;
-  // }
+
+  createWordCountHash(){
+    var freqMap = {};
+    const arrayOfData = this.state
+    arrayOfData.forEach((review) => {
+      var words = review.replace(/[.]/g, '').split(/\s/);
+      words.forEach(function(word) {
+          if (!freqMap[word]) {
+              freqMap[word] = 0;
+          }
+          freqMap[word] += 1;
+      });
+    })
+    return freqMap;
+  }
+
+
+
 
 
 
 
   render() {
     return (
-      <div className="ReviewContainer" reviewdataarray = {this.state.reviewdata}>
+      <div className="ReviewContainer" reviewdataarray = {this.state.reviewData}>
 
       </div>
     );

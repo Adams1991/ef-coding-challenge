@@ -15,4 +15,16 @@ it('has a array of reviews in its state', () => {
   assert.deepStrictEqual(result, 20);
 })
 
+it('can get details from that array', () => {
+  const reviewContainer = shallow(<ReviewContainer />);
+  const result = reviewContainer.props().reviewdataarray[0];
+  assert.deepStrictEqual(result, "A great product for daily use,");
+})
+
+it('has can create a word count hash from its state', () => {
+  const reviewContainer = shallow(<ReviewContainer />);
+  const result = reviewContainer.props().wordhash.product
+  assert.deepStrictEqual(result, 1);
+})
+
 // TODO: create test checking hash correctly mapped, render working etc.
