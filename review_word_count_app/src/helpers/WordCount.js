@@ -7,7 +7,7 @@ const createWordCountHash = (data) => {
 
     words.forEach((word) => {
       if (word.length > 3){
-      wordsOverTwoChar.push(word)
+      wordsOverTwoChar.push(word.toLowerCase())
     }
     });
 

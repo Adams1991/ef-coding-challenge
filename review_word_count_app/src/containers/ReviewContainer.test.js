@@ -25,12 +25,12 @@ it('can pass word count hash down as prop', () => {
   const reviewContainer = shallow(<ReviewContainer />);
   const wordHash =  reviewContainer.props().wordhash
   const result = Object.keys(wordHash).length
-  assert.deepStrictEqual(result, 76);
+  assert.deepStrictEqual(result, 38);
 })
 
 it('produces correct results from word hash', () => {
   const reviewContainer = shallow(<ReviewContainer />);
   const wordHash =  reviewContainer.props().wordhash
   const result = wordHash.product
-  assert.deepStrictEqual(result, 1);
+  assert.deepStrictEqual(result, 4);
 })
