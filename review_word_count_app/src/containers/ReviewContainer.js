@@ -28,14 +28,17 @@ class ReviewContainer extends Component {
         reviewdataarray= {this.state.reviewData}
         wordhash = {createWordCountHash(this.state.reviewData)}
       >
-      <WordCountTable
-        wordArray={wordArray}
-        valueArray={valueArray}
-      />
       <WordCloud
+          className="WordCloud"
+          wordArray={wordArray}
+          valueArray={valueArray}
+      />
+      <WordCountTable
+        className="WordTable"
         wordArray={wordArray}
         valueArray={valueArray}
       />
+
 
       </div>
     );

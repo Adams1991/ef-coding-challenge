@@ -14,7 +14,6 @@ const WordCloud = (props) => {
 
   const data = props.wordArray.map((word, index) => {
     let wordCount = getValues(index)
-    console.log(word);
     return {text:word, value: wordCount}
   });
 
@@ -22,7 +21,7 @@ const WordCloud = (props) => {
 
 
 
-const fontSizeMapper = word => (word.value) * 100;
+const fontSizeMapper = word => (word.value) * 30;
 const rotate = word => word.value % 360;
 
     return(

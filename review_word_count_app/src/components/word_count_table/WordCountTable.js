@@ -15,8 +15,6 @@ const WordCountTable = (props) => {
 
 
     return(
-      <div>
-
       <table className="Table" >
         <tbody>
         <tr>
@@ -27,8 +25,6 @@ const WordCountTable = (props) => {
         </tbody>
 
       </table>
-
-      </div>
     )
   }
 
