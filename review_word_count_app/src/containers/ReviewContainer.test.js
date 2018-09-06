@@ -21,10 +21,10 @@ it('can get details from that array', () => {
   assert.deepStrictEqual(result, "A great product for daily use,");
 })
 
-it('begins with null from word count hash from its state', () => {
+it('can pass word count hash down as prop', () => {
   const reviewContainer = shallow(<ReviewContainer />);
-  const result = reviewContainer.props().wordhash
-  assert.deepStrictEqual(result, null);
+  const result = reviewContainer.props().wordhash.good
+  assert.deepStrictEqual(result, 3);
 })
 
 // TODO: create test checking hash correctly mapped, render working etc.

@@ -7,16 +7,14 @@ class ReviewContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      reviewData: DataImport,
-      wordHash: null
+      reviewData: DataImport
     };
-    this.createWordCountHash = this.createWordCountHash.bind(this);
-  }
 
+  }
 
   createWordCountHash(){
     var freqMap = {};
-    const arrayOfData = this.state
+    const arrayOfData = this.state.reviewData
     arrayOfData.forEach((review) => {
       var words = review.replace(/[.]/g, '').split(/\s/);
       words.forEach(function(word) {
@@ -32,12 +30,14 @@ class ReviewContainer extends Component {
 
 
   render() {
+    this.createWordCountHash()
     return (
       <div
         className="ReviewContainer"
         reviewdataarray = {this.state.reviewData}
-        wordhash = {this.state.wordHash}
+        wordhash = {this.createWordCountHash()}
       >
+
 
       </div>
     );
