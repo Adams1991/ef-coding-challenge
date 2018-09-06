@@ -23,8 +23,16 @@ it('can get details from that array', () => {
 
 it('can pass word count hash down as prop', () => {
   const reviewContainer = shallow(<ReviewContainer />);
-  const result = reviewContainer.props().wordhash.good
-  assert.deepStrictEqual(result, 3);
+  const wordHash =  reviewContainer.props().wordhash
+  const result = Object.keys(wordHash).length
+  assert.deepStrictEqual(result, 76);
+})
+
+it('produces correct results from word hash', () => {
+  const reviewContainer = shallow(<ReviewContainer />);
+  const wordHash =  reviewContainer.props().wordhash
+  const result = wordHash.product
+  assert.deepStrictEqual(result, 1);
 })
 
 // TODO: create test checking hash correctly mapped, render working etc.
