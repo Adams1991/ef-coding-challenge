@@ -8,7 +8,7 @@ class WordCountTable extends React.Component {
     return(
       <div>
       <table className="Table" >
-        <Word  wordCountObject={this.props.wordCountObject}/>
+        <Word  wordArray={this.props.wordArray}/>
 
       </table>
       </div>

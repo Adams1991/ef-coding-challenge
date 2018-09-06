@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import createWordCountHash from '../helpers/WordCount'
+import createWordArray from '../helpers/KeysArray'
+import createValueArray from '../helpers/ValuesArray'
 import DataImport from '../DataImport';
 import './ReviewContainer.css';
 import WordCountTable from '../components/word_count_table/WordCountTable'
@@ -15,6 +17,7 @@ class ReviewContainer extends Component {
 
 
   render() {
+    const wordObject = createWordCountHash(this.state.reviewData);
     return (
       <div
         // Dummy props for testing purposes
@@ -22,7 +25,11 @@ class ReviewContainer extends Component {
         reviewdataarray= {this.state.reviewData}
         wordhash = {createWordCountHash(this.state.reviewData)}
       >
-      <WordCountTable   wordCountObject={createWordCountHash(this.state.reviewData)}/>
+      <WordCountTable
+        wordCountObject={wordObject}
+        wordArray={createWordArray(wordObject)}
+        valueArray={createValueArray(wordObject)}
+      />
 
       </div>
     );
