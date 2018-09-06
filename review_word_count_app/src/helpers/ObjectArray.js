@@ -5,7 +5,9 @@ const createObjectArray = (keyArray, valueArray) => {
     return {text:word, value: wordCount}
   });
 
-  return objectArray
+  return objectArray.sort(function(obj1, obj2) {
+	   return obj2.value - obj1.value;
+  })
 }
 
 export default createObjectArray;
