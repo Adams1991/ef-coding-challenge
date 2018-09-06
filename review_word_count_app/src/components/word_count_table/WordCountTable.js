@@ -10,7 +10,7 @@ const WordCountTable = (props) => {
   }
 
   const tableInfo = props.wordArray.map((word, index) => {
-  return <tr><td>{word}</td><td>{getValues(index)}</td></tr>
+  return <tr key={index}><td>{word}</td><td>{getValues(index)}</td></tr>
 });
 
 
