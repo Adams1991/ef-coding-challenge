@@ -1,18 +1,10 @@
 import React from 'react';
 import './WordCountTable.css';
 
-
-
 const WordCountTable = (props) => {
-
-  let getValues = function(index){
-    return props.valueArray[index];
-  }
-
-  const tableInfo = props.wordArray.map((word, index) => {
-  return <tr key={index}><td>{word}</td><td>{getValues(index)}</td></tr>
-});
-
+  const tableInfo = props.objectarray.map((object) => {
+    return <tr ><td>{object.text}</td><td>{object.value}</td></tr>
+  });
 
     return(
       <table className="Table" >
@@ -23,12 +15,8 @@ const WordCountTable = (props) => {
         </tr>
           {tableInfo}
         </tbody>
-
       </table>
     )
   }
-
-
-
 
 export default WordCountTable;
