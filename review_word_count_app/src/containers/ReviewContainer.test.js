@@ -9,7 +9,7 @@ it('renders without crashing', () => {
     shallow(<ReviewContainer />);
 })
 
-it('has a array of reviews in its state', () => {
+it('has an array of reviews in its state', () => {
   const reviewContainer = shallow(<ReviewContainer />);
   const result = reviewContainer.props().reviewdataarray.length
   assert.deepStrictEqual(result, 20);
@@ -21,10 +21,10 @@ it('can get details from that array', () => {
   assert.deepStrictEqual(result, "A great product for daily use,");
 })
 
-it('has can create a word count hash from its state', () => {
+it('begins with null from word count hash from its state', () => {
   const reviewContainer = shallow(<ReviewContainer />);
-  const result = reviewContainer.props().wordhash.product
-  assert.deepStrictEqual(result, 1);
+  const result = reviewContainer.props().wordhash
+  assert.deepStrictEqual(result, null);
 })
 
 // TODO: create test checking hash correctly mapped, render working etc.

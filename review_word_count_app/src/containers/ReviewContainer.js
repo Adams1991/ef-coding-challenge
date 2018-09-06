@@ -8,7 +8,7 @@ class ReviewContainer extends Component {
     super(props);
     this.state = {
       reviewData: DataImport,
-
+      wordHash: null
     };
     this.createWordCountHash = this.createWordCountHash.bind(this);
   }
@@ -31,13 +31,13 @@ class ReviewContainer extends Component {
 
 
 
-
-
-
-
   render() {
     return (
-      <div className="ReviewContainer" reviewdataarray = {this.state.reviewData}>
+      <div
+        className="ReviewContainer"
+        reviewdataarray = {this.state.reviewData}
+        wordhash = {this.state.wordHash}
+      >
 
       </div>
     );
