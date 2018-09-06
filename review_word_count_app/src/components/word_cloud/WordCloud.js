@@ -1,5 +1,4 @@
 import React from 'react';
-import './WordCloud.css';
 import { render } from 'react-dom';
 import ReactWordCloud from 'react-d3-cloud';
 
@@ -15,22 +14,25 @@ const WordCloud = (props) => {
 
   const data = props.wordArray.map((word, index) => {
     let wordCount = getValues(index)
+    console.log(word);
     return {text:word, value: wordCount}
   });
 
 
 
-const fontSizeMapper = word => Math.log2(word.value) * 5;
+
+
+const fontSizeMapper = word => (word.value) * 100;
 const rotate = word => word.value % 360;
 
     return(
-      <div>
           <ReactWordCloud
             data={data}
             fontSizeMapper={fontSizeMapper}
             rotate={rotate}
+            height= {1000}
+            width= {1000}
           />
-      </div>
     )
   }
 
