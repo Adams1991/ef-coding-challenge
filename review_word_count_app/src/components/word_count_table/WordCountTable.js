@@ -11,7 +11,7 @@ const WordCountTable = (props) => {
         <tbody>
         <tr>
           <th>Word</th>
-          <th>Amount Used</th>
+          <th>Amount of Time Used</th>
         </tr>
           {tableInfo}
         </tbody>
