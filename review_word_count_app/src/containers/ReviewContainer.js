@@ -25,9 +25,9 @@ class ReviewContainer extends React.Component {
   }
 
   render() {
-    const wordObject = createWordCountHash(this.state.reviewData);
-    const wordArray = createWordArray(wordObject);
-    const valueArray = createValueArray(wordObject);
+    const wordCountObject = createWordCountHash(this.state.reviewData);
+    const wordArray = createWordArray(wordCountObject);
+    const valueArray = createValueArray(wordCountObject);
     const objectArray = createObjectArray(wordArray,valueArray);
 
     var display = null
@@ -53,7 +53,7 @@ class ReviewContainer extends React.Component {
       // Dummy props for testing purposes
       className="ReviewContainer"
       reviewdataarray= {this.state.reviewData}
-      wordhash = {wordObject}
+      wordhash = {wordCountObject}
       objectarray = {objectArray}
     >
       <button onClick={this.changeDisplay}>Change Display</button>
