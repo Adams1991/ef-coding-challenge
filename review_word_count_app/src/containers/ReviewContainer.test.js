@@ -1,4 +1,4 @@
-import DataImport from '../../../DataImport';
+import DataImport from '../DataImport';
 const assert = require('assert');
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -34,5 +34,3 @@ it('produces correct results from word hash', () => {
   const result = wordHash.product
   assert.deepStrictEqual(result, 1);
 })
-
-// TODO: create test checking hash correctly mapped, render working etc.

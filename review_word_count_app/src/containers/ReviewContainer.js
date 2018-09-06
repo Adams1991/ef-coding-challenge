@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DataImport from '../../../DataImport';
+import DataImport from '../DataImport';
 import './ReviewContainer.css';
 
 class ReviewContainer extends Component {

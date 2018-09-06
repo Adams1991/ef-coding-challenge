@@ -1,4 +1,4 @@
-import DataImport from '../../../DataImport';
+import DataImport from '../DataImport';
 const assert = require('assert');
 
 it('can import data array from outside of app', () => {
