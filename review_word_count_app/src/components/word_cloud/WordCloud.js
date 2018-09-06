@@ -4,7 +4,7 @@ import ReactWordCloud from 'react-d3-cloud';
 
 const WordCloud = (props) => {
 
-  const data = props.objectarray.map((object) => {
+  const data = props.objectArray.map((object) => {
     return {text:object.text, value: object.value}
   });
 

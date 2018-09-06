@@ -2,7 +2,7 @@ import React from 'react';
 import './WordCountTable.css';
 
 const WordCountTable = (props) => {
-  const tableInfo = props.objectarray.map((object) => {
+  const tableInfo = props.objectArray.map((object) => {
     return <tr ><td>{object.text}</td><td>{object.value}</td></tr>
   });
 

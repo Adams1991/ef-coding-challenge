@@ -16,9 +16,9 @@ class ReviewContainer extends React.Component {
       reviewData: DataImport,
       displayWordCloud: false
     };
- }
+  }
 
- changeDisplay = () => {
+  changeDisplay = () => {
     this.setState({
         displayWordCloud: !this.state.displayWordCloud
     })
@@ -29,7 +29,6 @@ class ReviewContainer extends React.Component {
     const wordArray = createWordArray(wordCountObject);
     const valueArray = createValueArray(wordCountObject);
     const objectArray = createObjectArray(wordArray,valueArray);
-
     var display = null
 
     if (this.state.displayWordCloud){
@@ -37,14 +36,14 @@ class ReviewContainer extends React.Component {
                       className="WordCloud"
                       wordArray={wordArray}
                       valueArray={valueArray}
-                      objectarray = {objectArray}
+                      objectArray = {objectArray}
                   />
     }else{
         display =   <WordCountTable
                       className="WordTable"
                       wordArray={wordArray}
                       valueArray={valueArray}
-                      objectarray = {objectArray}
+                      objectArray = {objectArray}
                     />
     }
 
@@ -60,7 +59,9 @@ class ReviewContainer extends React.Component {
       {display}
     </div>
     );
+
   }
+
 }
 
 export default ReviewContainer;

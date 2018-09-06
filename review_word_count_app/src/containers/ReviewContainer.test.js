@@ -34,3 +34,17 @@ it('produces correct results from word hash', () => {
   const result = wordHash.product
   assert.deepStrictEqual(result, 4);
 })
+
+it('can pass object array down as prop', () => {
+  const reviewContainer = shallow(<ReviewContainer />);
+  const objectArray =  reviewContainer.props().objectarray
+  const result = Object.keys(objectArray).length
+  assert.deepStrictEqual(result, 33);
+})
+
+it('produces correct results from object array', () => {
+  const reviewContainer = shallow(<ReviewContainer />);
+  const objectArray =  reviewContainer.props().objectarray
+  const result = objectArray[0]
+  assert.deepStrictEqual(result, {"text": "great", "value": 4});
+})
