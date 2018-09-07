@@ -1,7 +1,5 @@
 import React from 'react';
 import createWordCountHash from '../helpers/WordCount'
-import createWordArray from '../helpers/KeysArray'
-import createValueArray from '../helpers/ValuesArray'
 import createObjectArray from '../helpers/ObjectArray'
 import DataImport from '../DataImport';
 import './ReviewContainer.css';
@@ -14,46 +12,38 @@ class ReviewContainer extends React.Component {
     super(props);
     this.state = {
       reviewData: DataImport,
-      displayWordCloud: false
+      changeDisplay: false
     };
   }
 
   changeDisplay = () => {
     this.setState({
-        displayWordCloud: !this.state.displayWordCloud
+        changeDisplay: !this.state.changeDisplay
     })
   }
 
   render() {
-    const wordCountObject = createWordCountHash(this.state.reviewData);
-    const wordArray = createWordArray(wordCountObject);
-    const valueArray = createValueArray(wordCountObject);
-    const objectArray = createObjectArray(wordArray,valueArray);
+    const wordCountHash = createWordCountHash(this.state.reviewData);
+    const objectArray = createObjectArray(wordCountHash);
     var display = null
 
-    if (this.state.displayWordCloud){
-       display = <WordCloud
-                      className="WordCloud"
-                      objectArray = {objectArray}
-                  />
+    if (this.state.changeDisplay){
+      display = <WordCloud className="word-cloud" objectArray = {objectArray}/>
     }else{
-        display =  <WordCountTable
-                      className="WordTable"
-                      objectArray = {objectArray}
-                    />
+      display = <WordCountTable className="word-table" objectArray = {objectArray}/>
     }
 
     return (
-    <div
-      // Dummy props for testing purposes
-      className="ReviewContainer"
-      reviewdataarray= {this.state.reviewData}
-      wordhash = {wordCountObject}
-      objectarray = {objectArray}
-    >
-      <button onClick={this.changeDisplay}>Change Display</button>
-      {display}
-    </div>
+      <div
+        // Dummy props for testing purposes
+        className="review-container"
+        reviewdataarray= {this.state.reviewData}
+        wordhash = {wordCountHash}
+        objectarray = {objectArray}
+      >
+        <button onClick={this.changeDisplay}>Change Display</button>
+        {display}
+      </div>
     );
 
   }

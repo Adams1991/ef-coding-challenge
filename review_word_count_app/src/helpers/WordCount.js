@@ -1,11 +1,14 @@
 // creates generic word count object
-const createWordCountHash = (data) => {
+const createWordCountHash = (arrayOfData) => {
+
   var freqMap = {};
-  const arrayOfData =  data
+
   arrayOfData.forEach((review) => {
 
     // removes unwanted characters
     var words = review.replace(/[-+().,!]/g, '').split(/\s/);
+
+    // new array for cleansing of non essential words
     var wordsOverTwoChar = [];
 
 
@@ -16,6 +19,7 @@ const createWordCountHash = (data) => {
       wordsOverTwoChar.push(word.toLowerCase())
     }
     });
+
     let toRemove = ["it's", "that", "this", "will", "does"]
     wordsOverTwoChar = wordsOverTwoChar.filter( ( word ) => !toRemove.includes( word ) );
 
@@ -27,7 +31,7 @@ const createWordCountHash = (data) => {
         freqMap[word] += 1;
     });
   })
-  return freqMap;
+    return freqMap;
 }
 
 export default createWordCountHash;

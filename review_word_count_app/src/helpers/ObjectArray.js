@@ -1,9 +1,13 @@
-const createObjectArray = (keyArray, valueArray) => {
+// creates Array with word count objects for iterating
+const createObjectArray = (wordCountHash) => {
 
-  const objectArray = keyArray.map((word, index) => {
-    let wordCount = valueArray[index]
-    return {text:word, value: wordCount}
-  });
+  let objectArray = [];
+
+  // Creates Object array from generic word count hash
+  Object.keys(wordCountHash).forEach((key) => {
+    var value = wordCountHash[key]
+    objectArray.push({text:key, value: value})
+  })
 
   // sorts object array so higher frequency words rendered at top of table
   return objectArray.sort(function(obj1, obj2) {
